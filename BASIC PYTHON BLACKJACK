@@ -1,0 +1,116 @@
+print("Blackjack Time")
+
+import random
+
+x= 1,2,3,4,5,6,7,8,9,10,11
+y= range (3,22)
+z=21
+
+enemyval=(random.choice(y))
+
+Num1=(random.choice(x))
+Num2=(random.choice(x))
+
+while Num1==Num2:
+    Num2=(random.choice(x))
+
+print("Your Numbers:" ,Num1, Num2)
+if Num1 + Num2>z:
+    print("More than 21, You Lose")
+    exit()
+elif Num1 + Num2==z:
+    print("21 Exact, Congrats")
+    exit()
+else:
+    print("Your Current Value:",Num1 +Num2)
+
+playercard=Num1 + Num2
+
+s=int(input("1 to Draw or 2 to Stay:"))
+if s==2:
+    if playercard==z:
+        print("21! You Win!")
+    elif playercard<z:
+        if playercard>enemyval:
+            print("You got the higher value card! You Win")
+        elif playercard<enemyval:
+            print("Aww,you lose!")
+        elif playercard==enemyval:
+            print("Tie")
+    print("Opponent's Value:" , enemyval)
+    print("Your Value:", playercard)
+    print("First Stay Should End Here")
+    exit()
+#Drawing first number.
+if s==1:
+    print("First Draw, Here you go!")
+    
+Num3=(random.choice(x))
+
+while Num3==Num1 and Num2:
+    Num3=(random.choice(x))
+print("1st Draw:", Num3)
+print("Your Numbers:", Num1,Num2,Num3)
+
+if Num1+Num2+Num3>z:
+    print("More than 21, You Lose. First Draw Loss Ends Here")
+    exit()
+elif Num1+Num2+Num3==z:
+    print("21 Exact,Congrats")
+    exit()
+else:
+    print("Your Current Value:", Num1+Num2+Num3)
+
+playercard2=Num1+Num2+Num3
+
+st=int(input("1 to Draw or 2 to Stay:"))
+if st==2:
+    if playercard2==z:
+        print("21! You Win!")
+    elif playercard2<z:
+        if playercard2>enemyval:
+            print("You got the higher value card! You Win")
+        elif playercard2<enemyval:
+            print("Aww,you lose!")
+        elif playercard2==enemyval:
+            print("Tie")
+    print("Opponent's Value:" , enemyval)
+    print("Your value:", playercard2)
+    print("Second Stay Should End Here")
+    exit()
+#Second Drawing
+if st==1:
+    print("Second Draw, Here You Go")
+    
+Num4=(random.choice(x))
+
+while Num4==Num1 and Num2 and Num3:
+    Num4=(random.choice(x))
+print("2nd Draw:" ,Num4)
+print("Your Numbers:", Num1,Num2,Num3,Num4)
+if Num1+Num2+Num3+Num4>z:
+    print("More than 21, You Lose.. 2nd Draw Loss Ends Here")
+    exit()
+elif Num1+Num2+Num3+Num4==z:
+    print("21 Exact, Congrats")
+    exit()
+else:
+    print("Your Current Value:",Num1+Num2+Num3+Num4)
+
+playercard3=Num1+Num2+Num3+Num4
+
+sta=int(input("1 to Draw or 2 to Stay:"))
+if sta==2:
+    if playercard3==z:
+        print("21! You Win!")
+    elif playercard3<z:
+        if playercard2>enemyval:
+            print("You got the higher value card! You Win")
+        elif playercard3<enemyval:
+            print("Aww,you lose!")
+        elif playercard3==enemyval:
+            print("Tie")
+    print("Opponent's Value:" , enemyval)
+    print("Your value:", playercard3)
+    print("Second Stay Should End Here")
+    exit()
